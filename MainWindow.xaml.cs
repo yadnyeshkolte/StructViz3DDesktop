@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows;
 using Microsoft.Win32;
 
-namespace ModelViewerDesktop
+namespace StructViz3D
 {
     public partial class MainWindow : Window
     {
