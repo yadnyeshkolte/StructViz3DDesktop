@@ -9,6 +9,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="web\assets\backgroundimage-T8WR3IGg.png" />
+    <None Remove="web\assets\index-3BC41zVh.css" />
+    <None Remove="web\assets\index-BroobejL.js" />
+    <None Remove="web\index.html" />
+    <None Remove="web\vite.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="web\assets\backgroundimage-T8WR3IGg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web\assets\index-3BC41zVh.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web\assets\index-BroobejL.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web\vite.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3065.39" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
