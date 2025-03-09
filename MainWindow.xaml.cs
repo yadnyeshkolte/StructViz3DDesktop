@@ -24,15 +24,28 @@ namespace StructViz3D
             webView.CoreWebView2.Settings.AreDefaultScriptDialogsEnabled = true;
             webView.CoreWebView2.Settings.AreDevToolsEnabled = true; // Set to false for production
 
+            // Add security settings to allow file access
+            webView.CoreWebView2.Settings.IsWebMessageEnabled = true;
+
+            // Allow local file access without CORS restrictions
+            await webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync(
+                "window.addEventListener('DOMContentLoaded', () => { document.body.style.margin = '0'; });");
+
+            // Add virtual host mapping for the application resources
+            string webFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "web");
+            webView.CoreWebView2.SetVirtualHostNameToFolderMapping(
+                "structviz3d.local", // Virtual host name
+                webFolderPath,       // Physical folder path
+                CoreWebView2HostResourceAccessKind.Allow);
+
             // Add event handlers
             webView.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
 
             // Create a folder for the web content
             SetupWebFolder();
 
-            // Navigate to the index.html
-            string webPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "web", "index.html");
-            webView.CoreWebView2.Navigate(new Uri(webPath).AbsoluteUri);
+            // Navigate using the virtual host instead of file:// protocol
+            webView.CoreWebView2.Navigate("https://structviz3d.local/index.html");
 
             // Expose C# methods to JavaScript
             ExposeHostObjectToWebView();
@@ -47,8 +60,50 @@ namespace StructViz3D
                 Directory.CreateDirectory(webFolderPath);
             }
 
-            // In a real application, you would copy your built files here
-            // or include them in the project with "Copy to Output Directory" set to "Copy if newer"
+            // Create assets folder
+            string assetsPath = Path.Combine(webFolderPath, "assets");
+            if (!Directory.Exists(assetsPath))
+            {
+                Directory.CreateDirectory(assetsPath);
+            }
+
+            // Copy the required files from your project to the web folder
+            // In a real application, you would ensure these files exist in your project
+            // and are set to "Copy to Output Directory" as "Copy if newer"
+
+            // For development, you might want to copy files from a known location
+            // For example:
+            /*
+            string sourcePath = @"C:\Your\React\Build\Path";
+            if (Directory.Exists(sourcePath))
+            {
+                // Copy all files from the build directory to web folder
+                CopyDirectory(sourcePath, webFolderPath);
+            }
+            */
+        }
+
+        private void CopyDirectory(string sourceDir, string destinationDir)
+        {
+            // Create destination directory if it doesn't exist
+            if (!Directory.Exists(destinationDir))
+            {
+                Directory.CreateDirectory(destinationDir);
+            }
+
+            // Copy files
+            foreach (string file in Directory.GetFiles(sourceDir))
+            {
+                string destFile = Path.Combine(destinationDir, Path.GetFileName(file));
+                File.Copy(file, destFile, true);
+            }
+
+            // Process subdirectories
+            foreach (string dir in Directory.GetDirectories(sourceDir))
+            {
+                string destDir = Path.Combine(destinationDir, Path.GetFileName(dir));
+                CopyDirectory(dir, destDir);
+            }
         }
 
         private void ExposeHostObjectToWebView()
