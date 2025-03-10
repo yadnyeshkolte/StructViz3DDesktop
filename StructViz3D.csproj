@@ -6,11 +6,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\error_icon.png" />
+    <None Remove="Assets\logo.ico" />
+    <None Remove="Assets\logo.png" />
     <None Remove="web\assets\backgroundimage-T8WR3IGg.png" />
     <None Remove="web\assets\index-3BC41zVh.css" />
+    <None Remove="web\assets\index-BQOHRQP8.js" />
     <None Remove="web\assets\index-BroobejL.js" />
     <None Remove="web\index.html" />
     <None Remove="web\vite.svg" />
@@ -23,7 +28,7 @@
     <Content Include="web\assets\index-3BC41zVh.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="web\assets\index-BroobejL.js">
+    <Content Include="web\assets\index-BQOHRQP8.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="web\index.html">
@@ -37,6 +42,18 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3065.39" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\error_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
