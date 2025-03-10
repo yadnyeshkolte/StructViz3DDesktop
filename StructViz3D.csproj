@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="web\assets\backgroundimage-T8WR3IGg.png" />
     <None Remove="web\assets\index-3BC41zVh.css" />
+    <None Remove="web\assets\index-BQOHRQP8.js" />
     <None Remove="web\assets\index-BroobejL.js" />
     <None Remove="web\index.html" />
     <None Remove="web\vite.svg" />
@@ -23,7 +24,7 @@
     <Content Include="web\assets\index-3BC41zVh.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="web\assets\index-BroobejL.js">
+    <Content Include="web\assets\index-BQOHRQP8.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="web\index.html">
