@@ -21,4 +21,4 @@ public partial class App : Application
         splashScreen.Show();
     }
 }
-
+
