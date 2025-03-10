@@ -5,20 +5,28 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructViz3D", "StructViz3D.csproj", "{74DD6E48-75FE-450E-B9EE-75887FF70554}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "..\Setup1\Setup1.vdproj", "{82A23954-A0D5-E4C3-5500-861FACC02964}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "StructViz3DSetup", "..\StructViz3DSetup\StructViz3DSetup.vdproj", "{E6940F87-4F04-F177-8B0E-C6CE3D375C6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Debug|x64.ActiveCfg = Debug|x64
+		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Debug|x64.Build.0 = Debug|x64
 		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82A23954-A0D5-E4C3-5500-861FACC02964}.Debug|Any CPU.ActiveCfg = Debug
-		{82A23954-A0D5-E4C3-5500-861FACC02964}.Release|Any CPU.ActiveCfg = Release
+		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Release|x64.ActiveCfg = Release|Any CPU
+		{74DD6E48-75FE-450E-B9EE-75887FF70554}.Release|x64.Build.0 = Release|Any CPU
+		{E6940F87-4F04-F177-8B0E-C6CE3D375C6D}.Debug|Any CPU.ActiveCfg = Debug
+		{E6940F87-4F04-F177-8B0E-C6CE3D375C6D}.Debug|x64.ActiveCfg = Debug
+		{E6940F87-4F04-F177-8B0E-C6CE3D375C6D}.Release|Any CPU.ActiveCfg = Release
+		{E6940F87-4F04-F177-8B0E-C6CE3D375C6D}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
